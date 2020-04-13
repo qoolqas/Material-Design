@@ -5,6 +5,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.webkit.WebView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
@@ -16,6 +17,8 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.qoolqas.materialdesign.ui.ServicesActivity
+import com.qoolqas.materialdesign.ui.WebActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -49,12 +52,24 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
             true
         }
+        val navWeb = navView.menu.findItem(R.id.nav_web)
+        navWeb.setOnMenuItemClickListener {
+            val intent = Intent(applicationContext, WebActivity::class.java)
+            startActivity(intent)
+            true
+        }
         val navShare = navView.menu.findItem(R.id.nav_share)
         val intent = Intent(Intent.ACTION_SEND)
         navShare.setOnMenuItemClickListener {
             intent.type = "text/plain"
             intent.putExtra(Intent.EXTRA_TEXT, "Halo gaes David disini")
             startActivity(Intent.createChooser(intent, "Share gaes"))
+            true
+        }
+        val navService = navView.menu.findItem(R.id.nav_service)
+        navService.setOnMenuItemClickListener {
+            val intent1 = Intent(applicationContext, ServicesActivity::class.java)
+            startActivity(intent1)
             true
         }
 
