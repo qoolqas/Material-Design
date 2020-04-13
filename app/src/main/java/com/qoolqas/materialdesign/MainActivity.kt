@@ -17,6 +17,7 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.qoolqas.materialdesign.ui.ServicesActivity
 import com.qoolqas.materialdesign.ui.WebActivity
 
 class MainActivity : AppCompatActivity() {
@@ -63,6 +64,12 @@ class MainActivity : AppCompatActivity() {
             intent.type = "text/plain"
             intent.putExtra(Intent.EXTRA_TEXT, "Halo gaes David disini")
             startActivity(Intent.createChooser(intent, "Share gaes"))
+            true
+        }
+        val navService = navView.menu.findItem(R.id.nav_service)
+        navService.setOnMenuItemClickListener {
+            val intent1 = Intent(applicationContext, ServicesActivity::class.java)
+            startActivity(intent1)
             true
         }
 

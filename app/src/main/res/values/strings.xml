@@ -16,4 +16,12 @@
     <string name="share">Share</string>
     <string name="send">Send</string>
     <string name="web">Web</string>
+    <string name="title_activity_services">ServicesActivity</string>
+    <string name="tab_text_1">Android</string>
+    <string name="tab_text_2">Jaringan</string>
+    <string name="tab_text_3">SysAdmin</string>
+    <string name="android">Android</string>
+    <string name="jaringan">Jaringan</string>
+    <string name="sysadmin">SysAdmin</string>
+    <string name="service">Service</string>
 </resources>
