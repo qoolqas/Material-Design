@@ -5,6 +5,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.webkit.WebView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
@@ -16,6 +17,7 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.qoolqas.materialdesign.ui.WebActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -46,6 +48,12 @@ class MainActivity : AppCompatActivity() {
         navSend.setOnMenuItemClickListener {
             val intent = Intent(Intent.ACTION_SENDTO, Uri.parse("smsto:089529272555"))
             intent.putExtra("sms_body", "Halo gaes david disini")
+            startActivity(intent)
+            true
+        }
+        val navWeb = navView.menu.findItem(R.id.nav_web)
+        navWeb.setOnMenuItemClickListener {
+            val intent = Intent(applicationContext, WebActivity::class.java)
             startActivity(intent)
             true
         }
